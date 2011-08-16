@@ -1,4 +1,4 @@
-# NGINX Module
+# RBot Module
 
 James Fryman <james@frymanet.com>
 
@@ -11,10 +11,10 @@ Install and bootstrap an RBot instance
 # Requirements
 
 Ruby Management Module 
-  - http://github.com/jfryman/puppet-rvm
-  - http://github.com/jfryman/puppet-ruby
+- http://github.com/jfryman/puppet-rvm
+- http://github.com/jfryman/puppet-ruby
 Puppet Labs Standard Library
-  - http://github.com/puppetlabs/puppetlabs-stdlib
+- http://github.com/puppetlabs/puppetlabs-stdlib
 
 <pre>
   class { 'rbot':
