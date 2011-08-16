@@ -1,0 +1,35 @@
+--- 
+plugins.path: 
+<% scope.lookupvar('rbot::params::rt_plugin_dir').each do |dir| -%>
+- <%= dir %>
+<% end -%>
+<% plugin_dir.each do |dir| -%>
+<% next if dir == '' -%>
+- <%= dir %>
+<% end -%>
+core.language: <%= core_language %>
+core.address_prefix:
+- "<%= address_prefix %>"
+irc.nick: <%= nickname %>
+server.list: 
+<% servers.each do |server| -%>
+- irc://<%= server %>
+<% end -%>
+auth.password: <%= auth_password %>
+irc.join_channels: 
+<% channels.each do |channel| -%>
+- "<%= channel %>"
+<% end -%>
+<% if ssl == 'true' -%>
+server.ssl: true
+<% end -%>
+<% if reply_with_nick == 'true' -%>
+core.reply_with_nick: true
+<% end -%>
+<% if irc_password != '' -%>
+server.password: <%= irc_password %>
+<% end -%>
+<% if bind_host != '' -%>
+server.bindhost: <%= bind_host %>
+<% end -%>
+core.nick_postfix: "<%= nick_postfix %>"
