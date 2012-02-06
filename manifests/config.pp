@@ -24,14 +24,14 @@ class rbot::config(
   user { $rbot::params::rt_uid:
     ensure     => present,
     comment    => 'RBot Service Account',
-    uid        => '999',
-    gid        => '999',
+    uid        => '409',
+    gid        => '409',
     shell      => '/bin/bash',
     managehome => 'true',
   }
   group { $rbot::params::rt_gid:
     ensure => 'present',
-    gid    => '999',
+    gid    => '409',
   }
   file { "${rbot::params::rt_homedir}/.rbot":
     ensure => directory,
