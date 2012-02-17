@@ -17,6 +17,14 @@ stop)
   echo "Shutting down RBot."
   /bin/kill `/bin/cat $HOME/.rbot/rbot.pid`
 ;;
+status)
+  if ! (ps ax | grep -v grep | grep launch_here.rb > /dev/null); then
+    echo "RBot is not running"
+    exit 1
+  else
+    echo "RBot is running"
+  fi
+;;
 *)
   echo "Usage: $0 {start|stop}"
   exit 1
